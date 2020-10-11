@@ -81,6 +81,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryControlListBoxSelected\ClassLibraryControlListBoxSelected.csproj">
+      <Project>{B539B3E5-4401-476C-8AFB-1157FC7E5A71}</Project>
+      <Name>ClassLibraryControlListBoxSelected</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClassLibraryControlSelected1\ClassLibraryControlSelected1.csproj">
       <Project>{7521f11c-0122-4266-90a1-148aaf858385}</Project>
       <Name>ClassLibraryControlSelected1</Name>

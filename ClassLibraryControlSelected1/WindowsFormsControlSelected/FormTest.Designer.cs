@@ -31,6 +31,7 @@
             this.buttonChange = new System.Windows.Forms.Button();
             this.controlComboBoxSelected1 = new ClassLibraryControlSelected1.ControlComboBoxSelected();
             this.controlTextBox1 = new ClassLibraryControlSelected2.ControlTextBox();
+            this.controlListBoxSelected1 = new ClassLibraryControlListBoxSelected.ControlListBoxSelected();
             this.SuspendLayout();
             // 
             // buttonChange
@@ -55,16 +56,24 @@
             // controlTextBox1
             // 
             this.controlTextBox1.ErrorColor = System.Drawing.Color.Empty;
-            this.controlTextBox1.Location = new System.Drawing.Point(231, 12);
+            this.controlTextBox1.Location = new System.Drawing.Point(228, 21);
             this.controlTextBox1.Name = "controlTextBox1";
             this.controlTextBox1.Size = new System.Drawing.Size(230, 119);
             this.controlTextBox1.TabIndex = 3;
+            // 
+            // controlListBoxSelected1
+            // 
+            this.controlListBoxSelected1.Location = new System.Drawing.Point(464, 21);
+            this.controlListBoxSelected1.Name = "controlListBoxSelected1";
+            this.controlListBoxSelected1.Size = new System.Drawing.Size(303, 139);
+            this.controlListBoxSelected1.TabIndex = 4;
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 195);
+            this.Controls.Add(this.controlListBoxSelected1);
             this.Controls.Add(this.controlTextBox1);
             this.Controls.Add(this.controlComboBoxSelected1);
             this.Controls.Add(this.buttonChange);
@@ -78,6 +87,7 @@
         private System.Windows.Forms.Button buttonChange;
         private ClassLibraryControlSelected1.ControlComboBoxSelected controlComboBoxSelected1;
         private ClassLibraryControlSelected2.ControlTextBox controlTextBox1;
+        private ClassLibraryControlListBoxSelected.ControlListBoxSelected controlListBoxSelected1;
     }
 }
 

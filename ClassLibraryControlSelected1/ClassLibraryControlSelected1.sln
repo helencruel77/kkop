@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsControlSelected
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryControlSelected2", "ClassLibraryControlSelected2\ClassLibraryControlSelected2.csproj", "{BC52FC99-3B25-462E-8E21-6F5A158DA57C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryControlListBoxSelected", "ClassLibraryControlListBoxSelected\ClassLibraryControlListBoxSelected.csproj", "{B539B3E5-4401-476C-8AFB-1157FC7E5A71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BC52FC99-3B25-462E-8E21-6F5A158DA57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC52FC99-3B25-462E-8E21-6F5A158DA57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC52FC99-3B25-462E-8E21-6F5A158DA57C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B539B3E5-4401-476C-8AFB-1157FC7E5A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B539B3E5-4401-476C-8AFB-1157FC7E5A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B539B3E5-4401-476C-8AFB-1157FC7E5A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B539B3E5-4401-476C-8AFB-1157FC7E5A71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
