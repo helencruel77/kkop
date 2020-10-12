@@ -8,8 +8,8 @@ namespace ClassLibraryControlListBoxSelected
 {
     public class Bus
     {
-        public string Id { get; set; }
-        public string Number { get; set; }
-        public string TimeOfWay { get; set; }
+        public int Id { get; set; }
+        public int Number { get; set; }
+        public int TimeOfWay { get; set; }
     }
 }

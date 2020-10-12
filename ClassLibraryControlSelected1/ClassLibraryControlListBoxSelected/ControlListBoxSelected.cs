@@ -46,41 +46,20 @@ namespace ClassLibraryControlListBoxSelected
             this.temp = temp;
         }
         [Category("Спецификация"), Description("Установка свойств")]
-        public void setProperty<T>(string propName, T value, string prop)
+        public void setProperty<T>(T value, string propName, int line)
         {
-            Type type = value.GetType();
-            PropertyInfo piInstance = type.GetProperty(propName);
-            PropertyInfo[] props = type.GetProperties();
-            switch (propName)
+            if (listBox.Items.Count < line)
             {
-                case "Id":
-                    piInstance.SetValue(value, prop);
-                    foreach (var propa in props)
-                    {
-                        _item = _item + " " + propa.GetValue(value).ToString();
-                        
-                    }
-                    break;
-                case "Number":
-                    piInstance.SetValue(value, prop);
-                    foreach (var propa in props)
-                    {
-                        _item = _item + " " + propa.GetValue(value).ToString();
-
-                    }
-                    break;
-                case "TimeOfWay":
-                    piInstance.SetValue(value, prop);
-                    foreach (var propa in props)
-                    {
-                        _item = _item + " " + propa.GetValue(value).ToString();
-
-                    }
-                    
-                    break;
+                for (int i = listBox.Items.Count + 1; i <= line + 1; i++)
+                {
+                    listBox.Items.Add(temp);
+                }
             }
-            listBox.Items.Add(_item);
-            _item = "";
+            Type type = value.GetType();
+            string name = "(" + propName + ")";
+            var s = type.GetProperty(propName).GetValue(value, null);
+            listBox.Items[line] = listBox.Items[line].ToString().Replace(name, s?.ToString());
+
         }
     }
 }

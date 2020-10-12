@@ -14,12 +14,26 @@ namespace ClassLibraryControlSelected2
     public partial class ControlTextBox : UserControl
     {
         public string reg = "(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)[0-9][0-9]";
-        
+
         private string userInput = string.Empty;
+        private string temp = "19.03.1967";
+
+        public void setTemp(string str)
+        {
+            textBox.Text = str;
+        }
+
+        public void leaveTemp()
+        {
+            temp = "";
+            textBox.Text = "";
+        }
+
 
         public ControlTextBox()
         {
             InitializeComponent();
+            textBox.Text = temp;
         }
 
         [Category("Спецификация"), Description("Значение корректно")]
@@ -28,6 +42,11 @@ namespace ClassLibraryControlSelected2
             get
             {
                 return checkReg() ? userInput : string.Empty;
+            }
+            set
+            {
+                userInput = value;
+                textBox.Text = userInput;
             }
         }
 
@@ -92,6 +111,12 @@ namespace ClassLibraryControlSelected2
             toolTip.UseAnimation = true;
             toolTip.ShowAlways = true;
             toolTip.SetToolTip(this.textBox, "dd.mm.yyyy");
+        }
+
+        private void textBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            temp = "";
+            textBox.Text = "";
         }
     }
 }

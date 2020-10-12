@@ -63,15 +63,7 @@ namespace ClassLibraryControlSelected1
         }
         public void LoadCombo<T>(T elems)
         {
-            List<string> list = new List<string>
-            {
-                elems.ToString()
-            };
-            foreach (var elem in list) { 
-                comboBox.Items.Add(elem); 
-            }
-            
-            
+            comboBox.Items.Add(elems.ToString());
         }
 
     }

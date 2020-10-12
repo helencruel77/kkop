@@ -19,11 +19,14 @@ namespace WindowsFormsControlSelected
             controlComboBoxSelected1.LoadCombo(TestEnum.Значение1);
             controlComboBoxSelected1.LoadCombo(TestEnum.Значение2);
             controlTextBox1.ErrorColor = Color.Red;
-            string temp = "Id TimeOfWay Number";
+            string temp = "(Id) (TimeOfWay) (Number)";
             controlListBoxSelected1.setTemplate(temp);
-            var setOne = new Bus { Id = "id", Number = "Number", TimeOfWay = "TimeOfWay" };
-            controlListBoxSelected1.setProperty("Id", setOne, "37");
-            controlListBoxSelected1.setProperty("Number", setOne, "38");
+            var set1 = new Bus { Id = 0, Number = 56, TimeOfWay = 197 };
+            var set2 = new Bus { Id = 1, Number = 36, TimeOfWay = 148 };
+            var set3 = new Bus { Id = 2, Number = 59, TimeOfWay = 260 };
+            var set4 = new Bus { Id = 3, Number = 96, TimeOfWay = 115 };
+            controlListBoxSelected1.setProperty(set1, "Number", 1);
+            controlListBoxSelected1.setProperty(set2, "Id", 1);
 
         }
 
@@ -34,7 +37,12 @@ namespace WindowsFormsControlSelected
 
         private void controlListBoxSelected_ListBoxSelectedElementChange(object sender, EventArgs e)
         {
-            MessageBox.Show(controlComboBoxSelected1.SelectedIndex.ToString() +" "+ controlComboBoxSelected1.SelectedText);
+            MessageBox.Show(controlComboBoxSelected1.SelectedIndex.ToString() + " " + controlComboBoxSelected1.SelectedText);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            controlTextBox1.UserInput = DateTime.Today.ToString();
         }
     }
 }
