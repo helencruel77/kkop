@@ -44,19 +44,34 @@ namespace ClassLibraryExcelComponent
                     Name = "Лист11"
                 };
                 sheets.Append(sheet);
-                var fields = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
                 MergeCells(new ExcelMergeParameters
                 {
                     Worksheet = worksheetPart.Worksheet,
                     CellFromName = "A1",
-                    CellToName = "A3"
+                    CellToName = "A4"
                 });
+                MergeCells(new ExcelMergeParameters
+                {
+                    Worksheet = worksheetPart.Worksheet,
+                    CellFromName = "B2",
+                    CellToName = "B3"
+                });
+                InsertCellInWorksheet(new ExcelCellParameters
+                {
+                    Worksheet = worksheetPart.Worksheet,
+                    ShareStringPart = shareStringPart,
+                    ColumnName = "A",
+                    RowIndex = 1,
+                    Text = "Автобусы",
+                    StyleIndex = 2U
+                });
+                var fields = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+
                 var fieldNumHead = 1;
                 foreach (var field in fields)
                 {
-                    
-                    var column = this.GetExcelColumnName(isHorizontalHead ? fieldNumHead : 1);
-                    var rowIndex = isHorizontalHead ? (uint)1 : (uint)fieldNumHead;
+                    var column = this.GetExcelColumnName(isHorizontalHead ? fieldNumHead : 2);
+                    var rowIndex = isHorizontalHead ? (uint)2 : (uint)fieldNumHead;
                     InsertCellInWorksheet(new ExcelCellParameters
                     {
                         Worksheet = worksheetPart.Worksheet,
@@ -64,18 +79,19 @@ namespace ClassLibraryExcelComponent
                         ColumnName = column,
                         RowIndex = rowIndex,
                         Text = field.Name,
-                        StyleIndex = 0U
+                        StyleIndex = 1U
                     });
+                    fieldNumHead++;
                 }
 
-                var dataRowNum = 2;
+                var dataRowNum = 3;
                 foreach (var dataRow in data)
                 {
                     var fieldNum = 1;
                     foreach (var field in fields)
                     {
                         var column = string.Empty;
-                        var rowIndex = 0U;
+                        var rowIndex = 1U;
                         column = this.GetExcelColumnName(isHorizontalHead ? fieldNum : dataRowNum);
                         rowIndex = isHorizontalHead ? (uint)dataRowNum : (uint)fieldNum;
                         InsertCellInWorksheet(new ExcelCellParameters
@@ -85,7 +101,7 @@ namespace ClassLibraryExcelComponent
                             ColumnName = column,
                             RowIndex = rowIndex,
                             Text = field.GetValue(dataRow).ToString(),
-                            StyleIndex = 0U
+                            StyleIndex = 1U
                         });
                         fieldNum++;
                     }

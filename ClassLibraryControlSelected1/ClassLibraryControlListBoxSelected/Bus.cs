@@ -10,6 +10,7 @@ namespace ClassLibraryControlListBoxSelected
     public class Bus
     {
         public int Id { get; set; }
+        public string Mark { get; set; }
         public int Number { get; set; }
         public int TimeOfWay { get; set; }
     }

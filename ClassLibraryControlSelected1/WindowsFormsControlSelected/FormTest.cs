@@ -23,10 +23,10 @@ namespace WindowsFormsControlSelected
             controlTextBox1.ErrorColor = Color.Red;
             string temp = "(Id) (TimeOfWay) (Number)";
             controlListBoxSelected1.setTemplate(temp);
-            var set1 = new Bus { Id = 0, Number = 56, TimeOfWay = 197 };
-            var set2 = new Bus { Id = 1, Number = 36, TimeOfWay = 148 };
-            var set3 = new Bus { Id = 2, Number = 59, TimeOfWay = 260 };
-            var set4 = new Bus { Id = 3, Number = 96, TimeOfWay = 115 };
+            var set1 = new Bus { Id = 0, Mark = "Honda", Number = 56, TimeOfWay = 197 };
+            var set2 = new Bus { Id = 1, Mark = "Mersedes", Number = 36, TimeOfWay = 148 };
+            var set3 = new Bus { Id = 2, Mark = "Lada", Number = 59, TimeOfWay = 260 };
+            var set4 = new Bus { Id = 3, Mark = "Gas", Number = 96, TimeOfWay = 115 };
             controlListBoxSelected1.setProperty(set1, "Number", 1);
             controlListBoxSelected1.setProperty(set2, "Id", 1);
 
