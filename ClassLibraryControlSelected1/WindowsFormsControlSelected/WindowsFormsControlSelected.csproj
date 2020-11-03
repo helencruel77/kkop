@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel-gdi">
+      <HintPath>..\packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\MigraDoc.DocumentObjectModel-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering-gdi">
+      <HintPath>..\packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\MigraDoc.Rendering-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-gdi">
+      <HintPath>..\packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\PdfSharp-gdi.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -81,6 +93,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryBackUpComponent\ClassLibraryBackUpComponent.csproj">
+      <Project>{63371757-EC44-434F-B98F-65C1425D25B5}</Project>
+      <Name>ClassLibraryBackUpComponent</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClassLibraryControlListBoxSelected\ClassLibraryControlListBoxSelected.csproj">
       <Project>{B539B3E5-4401-476C-8AFB-1157FC7E5A71}</Project>
       <Name>ClassLibraryControlListBoxSelected</Name>
@@ -92,6 +108,14 @@
     <ProjectReference Include="..\ClassLibraryControlSelected2\ClassLibraryControlSelected2.csproj">
       <Project>{BC52FC99-3B25-462E-8E21-6F5A158DA57C}</Project>
       <Name>ClassLibraryControlSelected2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryExcelComponent\ClassLibraryExcelComponent.csproj">
+      <Project>{6768BFC4-DF2C-4058-B29C-65F0822A0AF4}</Project>
+      <Name>ClassLibraryExcelComponent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryPDFComponent\ClassLibraryPDFComponent.csproj">
+      <Project>{FA0F6F32-92CB-41D7-AAB7-1BFE34F81F7A}</Project>
+      <Name>ClassLibraryPDFComponent</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

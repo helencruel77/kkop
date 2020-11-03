@@ -1,4 +1,6 @@
-﻿using ClassLibraryControlListBoxSelected;
+﻿using ClassLibraryBackUpComponent;
+using ClassLibraryControlListBoxSelected;
+using MigraDoc.DocumentObjectModel.Shapes.Charts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +30,21 @@ namespace WindowsFormsControlSelected
             controlListBoxSelected1.setProperty(set1, "Number", 1);
             controlListBoxSelected1.setProperty(set2, "Id", 1);
 
+            var list = new List<Bus>
+            {
+                set1,
+                set2,
+                set3,
+                set4
+            };
+
+            set1.Id = 32;
+            set1.Number = 5;
+            set1.TimeOfWay = 67;
+
+            componentBackUp1.saveData("D:/1/2/3", list.ToArray());
+            componentExcel1.CreateExcelReport("D:/1/2/otch.xlsx", false, list.ToArray());
+            componentPDF1.createPdfDeiagram("D:/1/2/otch.pdf", set1, DataLabelType.Value);
         }
 
         private void buttonChange_Click(object sender, EventArgs e)

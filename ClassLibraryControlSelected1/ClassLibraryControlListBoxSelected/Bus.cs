@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryControlListBoxSelected
 {
+    [Serializable]
     public class Bus
     {
         public int Id { get; set; }
