@@ -7,12 +7,13 @@ using System.Linq;
 using System.ComponentModel;
 using System.Reflection;
 using System;
+using System.Collections.Generic;
 
 namespace ClassLibraryExcelComponent
 {
     public partial class ComponentExcel : Component
     {
-        public void CreateExcelReport<T>(string fileName, bool isHorizontalHead, T[] data)
+        public void CreateExcelReport<T,Y>(string fileName, bool isHorizontalHead, T[] data, Y[] cols)
         {
             using (var spreadsheetDocument = SpreadsheetDocument.Create(fileName, SpreadsheetDocumentType.Workbook))
             {
@@ -50,12 +51,6 @@ namespace ClassLibraryExcelComponent
                     CellFromName = "A1",
                     CellToName = "A4"
                 });
-                MergeCells(new ExcelMergeParameters
-                {
-                    Worksheet = worksheetPart.Worksheet,
-                    CellFromName = "B2",
-                    CellToName = "B3"
-                });
                 InsertCellInWorksheet(new ExcelCellParameters
                 {
                     Worksheet = worksheetPart.Worksheet,
@@ -66,6 +61,27 @@ namespace ClassLibraryExcelComponent
                     StyleIndex = 2U
                 });
                 var fields = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                var columns = typeof(Y).GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                var num = 2;
+                List<int> list = new List<int>();
+                foreach (var col in cols)
+                {
+                    foreach (var column in columns)
+                    {
+                        list.Add((int)column.GetValue(col));
+                    }
+                }
+
+                for (int i = 0; i < list.Count; i ++)
+                {
+                    MergeCells(new ExcelMergeParameters
+                        {
+                            Worksheet = worksheetPart.Worksheet,
+                            CellFromName = GetExcelColumnName(num) + list[i],
+                            CellToName = GetExcelColumnName(num) + list[i+1]
+                    });
+                    i++;
+                }
 
                 var fieldNumHead = 1;
                 foreach (var field in fields)

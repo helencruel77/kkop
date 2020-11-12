@@ -1,4 +1,5 @@
 ﻿using ClassLibraryBackUpComponent;
+using ClassLibraryExcelComponent;
 using ClassLibraryControlListBoxSelected;
 using MigraDoc.DocumentObjectModel.Shapes.Charts;
 using System;
@@ -42,9 +43,14 @@ namespace WindowsFormsControlSelected
             set1.Number = 5;
             set1.TimeOfWay = 67;
 
-            componentBackUp1.saveData("D:/1/2/3", list.ToArray());
-            componentExcel1.CreateExcelReport("D:/1/2/otch.xlsx", false, list.ToArray());
-            componentPDF1.createPdfDeiagram("D:/1/2/otch.pdf", set1, DataLabelType.Value);
+            var mer1 = new Merge {CellToName = 2, CellFromName = 3 };
+            var list1 = new List<Merge>
+            {
+                mer1
+            };
+            componentBackUp1.saveData("C:/Users/helen/OneDrive/Desktop", list.ToArray());
+            componentExcel1.CreateExcelReport("C:/Users/helen/OneDrive/Desktop/otch.xlsx", false, list.ToArray(), list1.ToArray());
+            componentPDF1.createPdfDeiagram("C:/Users/helen/OneDrive/Desktop/otch.pdf", set1, DataLabelType.Value);
         }
 
         private void buttonChange_Click(object sender, EventArgs e)

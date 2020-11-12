@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="ExcelCellParameters.cs" />
     <Compile Include="ExcelMergeParameters.cs" />
+    <Compile Include="Merge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
