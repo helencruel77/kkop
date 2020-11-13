@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.ViewModel
 {
+    [Serializable]
     public class ProductViewModel
     {
         public int Id { get; set; }

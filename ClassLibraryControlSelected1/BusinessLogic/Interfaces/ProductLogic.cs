@@ -63,12 +63,12 @@ namespace BusinessLogic.Interfaces
             }
         }
 
-        public List<ProductViewModel> Read(ProductBindingModel filter)
+        public List<ProductViewModel> Read(ProductBindingModel model)
         {
             using (var context = new ProductDatabase())
             {
                 return context.Products
-                .Where(rec => filter == null || rec.Id == filter.Id)
+                .Where(rec => model == null || rec.Id == model.Id)
                 .ToList()
                .Select(rec => new ProductViewModel
                {

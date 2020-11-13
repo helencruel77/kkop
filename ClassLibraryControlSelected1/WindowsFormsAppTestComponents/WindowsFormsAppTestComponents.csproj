@@ -36,6 +36,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClassLibraryControlSelected">
+      <HintPath>..\LibraryControlComponent\ClassLibraryControlSelected.dll</HintPath>
+    </Reference>
+    <Reference Include="KOP_laba2">
+      <HintPath>..\LibraryControlComponent\KOP_laba2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -141,6 +147,9 @@
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.5.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Packaging">
+      <HintPath>..\LibraryControlComponent\System.IO.Packaging.dll</HintPath>
+    </Reference>
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -178,6 +187,12 @@
     <Reference Include="WindowsFormsControlLibrary">
       <HintPath>..\LibraryControlComponent\WindowsFormsControlLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Виталя">
+      <HintPath>..\LibraryControlComponent\Виталя.dll</HintPath>
+    </Reference>
+    <Reference Include="Оля">
+      <HintPath>..\LibraryControlComponent\Оля.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FormCreate.cs">
@@ -194,6 +209,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCreate.resx">
+      <DependentUpon>FormCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +242,10 @@
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
       <Project>{A56B8F43-4790-4F79-B140-C063B777D968}</Project>
       <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBaseImplement\DataBaseImplement.csproj">
+      <Project>{84676565-43C4-4736-8ED2-E7173E42D4E6}</Project>
+      <Name>DataBaseImplement</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

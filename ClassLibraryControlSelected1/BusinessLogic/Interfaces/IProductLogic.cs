@@ -11,7 +11,7 @@ namespace BusinessLogic.Interfaces
     public interface IProductLogic
     {
         void CreateOrUpdate(ProductBindingModel model);
-        List<ProductViewModel> Read(ProductBindingModel filter);
+        List<ProductViewModel> Read(ProductBindingModel model);
         void Delete(ProductBindingModel model);
     }
 }
