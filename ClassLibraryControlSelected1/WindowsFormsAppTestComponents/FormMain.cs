@@ -2,6 +2,8 @@
 using BusinessLogic.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Unity;
@@ -19,10 +21,6 @@ namespace WindowsFormsAppTestComponents
         {
             InitializeComponent();
             this.logic = logic;
-            Queue<string> queue = new Queue<string>();
-            queue.Enqueue("Название");
-            queue.Enqueue("Категория");
-            queue.Enqueue("Количество");
             controlTree.Order("Name", "Category", "Count");
         }
 
@@ -62,6 +60,9 @@ namespace WindowsFormsAppTestComponents
                     try
                     {
                         componentSaveDataBinary.SaveData(dialog.FileName, products.ToList());
+                        MessageBox.Show("Сохранение прошло успешно", "Сообщение",
+               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult = DialogResult.OK;
                     }
                     catch (Exception ex)
                     {
@@ -70,6 +71,36 @@ namespace WindowsFormsAppTestComponents
                     }
                 }
             }
+        }
+
+        private void buttonChart_Click(object sender, EventArgs e)
+        {
+            var products = logic.Read(null);
+            DataTable table = new DataTable();
+            DataColumn firstColumn = new DataColumn("Продукты");
+            table.Columns.Add(firstColumn);
+            List<string> names = new List<string>();
+            foreach (var product in products)
+            {
+                table.Rows.Add(product.Count);
+                names.Add(product.Name);
+            }
+            componentWordReport.Categories = names.ToArray();
+            componentWordReport.DiagramName = "Гистограмма по продуктам";
+            componentWordReport.SetData(table);
+            using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    componentWordReport.Path = dialog.FileName;
+                    componentWordReport.CreateDoc();
+                }
+            }
+        }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,22 +31,25 @@
             this.components = new System.ComponentModel.Container();
             this.controlTree = new ClassLibraryControlSelected.ControlTreeView();
             this.componentSaveDataBinary = new WindowsFormsComponentLibrary.Data.ComponentSaveDataBinary(this.components);
+            this.componentWordReport = new KOP_laba2.ComponentWord(this.components);
             this.buttonBackup = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
             this.buttonChart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // controlDataTreeRow
+            // controlTree
             // 
             this.controlTree.Location = new System.Drawing.Point(12, 12);
-            this.controlTree.Name = "controlDataTreeRow";
+            this.controlTree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlTree.Name = "controlTree";
+            this.controlTree.SelectedNode = null;
             this.controlTree.Size = new System.Drawing.Size(511, 237);
             this.controlTree.TabIndex = 0;
             // 
             // buttonBackup
             // 
-            this.buttonBackup.Location = new System.Drawing.Point(12, 255);
+            this.buttonBackup.Location = new System.Drawing.Point(12, 292);
             this.buttonBackup.Name = "buttonBackup";
             this.buttonBackup.Size = new System.Drawing.Size(93, 26);
             this.buttonBackup.TabIndex = 1;
@@ -56,7 +59,7 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(430, 255);
+            this.buttonCreate.Location = new System.Drawing.Point(430, 292);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(93, 26);
             this.buttonCreate.TabIndex = 2;
@@ -66,27 +69,29 @@
             // 
             // buttonReport
             // 
-            this.buttonReport.Location = new System.Drawing.Point(156, 255);
+            this.buttonReport.Location = new System.Drawing.Point(156, 292);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(93, 26);
             this.buttonReport.TabIndex = 3;
             this.buttonReport.Text = "Отчет Word";
             this.buttonReport.UseVisualStyleBackColor = true;
+            this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
             // 
             // buttonChart
             // 
-            this.buttonChart.Location = new System.Drawing.Point(290, 255);
+            this.buttonChart.Location = new System.Drawing.Point(290, 292);
             this.buttonChart.Name = "buttonChart";
-            this.buttonChart.Size = new System.Drawing.Size(93, 26);
+            this.buttonChart.Size = new System.Drawing.Size(110, 26);
             this.buttonChart.TabIndex = 4;
             this.buttonChart.Text = "Диаграмма Word";
             this.buttonChart.UseVisualStyleBackColor = true;
+            this.buttonChart.Click += new System.EventHandler(this.buttonChart_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 294);
+            this.ClientSize = new System.Drawing.Size(552, 330);
             this.Controls.Add(this.buttonChart);
             this.Controls.Add(this.buttonReport);
             this.Controls.Add(this.buttonCreate);
@@ -100,9 +105,9 @@
         }
 
         #endregion
-        private WindowsFormsControlLibrary.Data.ControlDataTreeRow controlDataTreeRow;
         private WindowsFormsComponentLibrary.Data.ComponentSaveDataBinary componentSaveDataBinary;
         private ClassLibraryControlSelected.ControlTreeView controlTree;
+        private KOP_laba2.ComponentWord componentWordReport;
         private System.Windows.Forms.Button buttonBackup;
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonReport;
