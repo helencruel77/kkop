@@ -1,5 +1,6 @@
 ﻿using BusinessLogic.Interfaces;
 using BusinessLogic.ViewModel;
+using DataBaseImplement.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -85,22 +86,17 @@ namespace WindowsFormsAppTestComponents
                 table.Rows.Add(product.Count);
                 names.Add(product.Name);
             }
-            componentWordReport.Categories = names.ToArray();
-            componentWordReport.DiagramName = "Гистограмма по продуктам";
-            componentWordReport.SetData(table);
+            componentWordChart.Categories = names.ToArray();
+            componentWordChart.DiagramName = "Гистограмма по продуктам";
+            componentWordChart.SetData(table);
             using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    componentWordReport.Path = dialog.FileName;
-                    componentWordReport.CreateDoc();
+                    componentWordChart.Path = dialog.FileName;
+                    componentWordChart.CreateDoc();
                 }
             }
-        }
-
-        private void buttonReport_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

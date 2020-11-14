@@ -31,10 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.controlTree = new ClassLibraryControlSelected.ControlTreeView();
             this.componentSaveDataBinary = new WindowsFormsComponentLibrary.Data.ComponentSaveDataBinary(this.components);
-            this.componentWordReport = new KOP_laba2.ComponentWord(this.components);
+            this.componentWordChart = new KOP_laba2.ComponentWord(this.components);
             this.buttonBackup = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
-            this.buttonReport = new System.Windows.Forms.Button();
             this.buttonChart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -67,23 +66,13 @@
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
-            // buttonReport
-            // 
-            this.buttonReport.Location = new System.Drawing.Point(156, 292);
-            this.buttonReport.Name = "buttonReport";
-            this.buttonReport.Size = new System.Drawing.Size(93, 26);
-            this.buttonReport.TabIndex = 3;
-            this.buttonReport.Text = "Отчет Word";
-            this.buttonReport.UseVisualStyleBackColor = true;
-            this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
-            // 
             // buttonChart
             // 
-            this.buttonChart.Location = new System.Drawing.Point(290, 292);
+            this.buttonChart.Location = new System.Drawing.Point(215, 292);
             this.buttonChart.Name = "buttonChart";
             this.buttonChart.Size = new System.Drawing.Size(110, 26);
             this.buttonChart.TabIndex = 4;
-            this.buttonChart.Text = "Диаграмма Word";
+            this.buttonChart.Text = "Диаграмма";
             this.buttonChart.UseVisualStyleBackColor = true;
             this.buttonChart.Click += new System.EventHandler(this.buttonChart_Click);
             // 
@@ -93,7 +82,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 330);
             this.Controls.Add(this.buttonChart);
-            this.Controls.Add(this.buttonReport);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.buttonBackup);
             this.Controls.Add(this.controlTree);
@@ -107,10 +95,9 @@
         #endregion
         private WindowsFormsComponentLibrary.Data.ComponentSaveDataBinary componentSaveDataBinary;
         private ClassLibraryControlSelected.ControlTreeView controlTree;
-        private KOP_laba2.ComponentWord componentWordReport;
+        private KOP_laba2.ComponentWord componentWordChart;
         private System.Windows.Forms.Button buttonBackup;
         private System.Windows.Forms.Button buttonCreate;
-        private System.Windows.Forms.Button buttonReport;
         private System.Windows.Forms.Button buttonChart;
     }
 }
