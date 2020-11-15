@@ -108,6 +108,7 @@ namespace WindowsFormsAppTestComponents
             foreach (var product in products)
             {
                 classProducts[count] = new Product { 
+                    Id = product.Id,
                     Name = product.Name,
                     Category = product.Category,
                     Count = product.Count
@@ -124,7 +125,7 @@ namespace WindowsFormsAppTestComponents
                 {
                     try
                     {
-                        wordReportComponent1.AddTable<Product>(classProducts.ToList(), $"Отчёт за {DateTime.Now.ToString("dd.MM.yyyy")}", dialog.FileName);
+                        wordReportComponent.AddTable<Product>(classProducts.ToList(), "Продукты", dialog.FileName);
                         MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)

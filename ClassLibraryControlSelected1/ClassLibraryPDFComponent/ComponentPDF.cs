@@ -35,7 +35,7 @@ namespace ClassLibraryPDFComponent
 
             chart.PlotArea.LineFormat.Color = Colors.Black;
             chart.PlotArea.LineFormat.Width = 1;
-            var fields = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+            var fields = typeof(T).GetProperties();
             foreach (var field in fields)
             {
                 double numValue;

@@ -60,8 +60,8 @@ namespace ClassLibraryExcelComponent
                     Text = "Автобусы",
                     StyleIndex = 2U
                 });
-                var fields = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-                var columns = typeof(Y).GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                var fields = typeof(T).GetProperties();
+                var columns = typeof(Y).GetProperties();
                 var num = 2;
                 List<int> list = new List<int>();
                 foreach (var col in cols)

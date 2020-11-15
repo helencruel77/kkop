@@ -32,6 +32,7 @@
             this.controlTree = new ClassLibraryControlSelected.ControlTreeView();
             this.componentSaveDataBinary = new WindowsFormsComponentLibrary.Data.ComponentSaveDataBinary(this.components);
             this.componentWordChart = new KOP_laba2.ComponentWord(this.components);
+            this.wordReportComponent = new ClassLibraryWordComponent.WordReportComponent();
             this.buttonBackup = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonChart = new System.Windows.Forms.Button();
@@ -107,6 +108,7 @@
         private WindowsFormsComponentLibrary.Data.ComponentSaveDataBinary componentSaveDataBinary;
         private ClassLibraryControlSelected.ControlTreeView controlTree;
         private KOP_laba2.ComponentWord componentWordChart;
+        private ClassLibraryWordComponent.WordReportComponent wordReportComponent;
         private System.Windows.Forms.Button buttonBackup;
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonChart;
