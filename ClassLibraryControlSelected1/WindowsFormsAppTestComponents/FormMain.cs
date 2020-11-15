@@ -18,6 +18,7 @@ namespace WindowsFormsAppTestComponents
 
         private readonly IProductLogic logic;
 
+
         public FormMain(IProductLogic logic)
         {
             InitializeComponent();
@@ -95,6 +96,41 @@ namespace WindowsFormsAppTestComponents
                 {
                     componentWordChart.Path = dialog.FileName;
                     componentWordChart.CreateDoc();
+                }
+            }
+        }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+            var products = logic.Read(null);
+            int count = 0;
+            Product[] classProducts = new Product[products.Count];
+            foreach (var product in products)
+            {
+                classProducts[count] = new Product { 
+                    Name = product.Name,
+                    Category = product.Category,
+                    Count = product.Count
+                };
+                count++;
+            }
+            for (int i = 0; i < classProducts.Length; i++)
+            {
+                Console.WriteLine(classProducts[i]);
+            }
+            using (var dialog = new SaveFileDialog { Filter = "*.docx|*.doc" })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        wordReportComponent1.AddTable<Product>(classProducts.ToList(), $"Отчёт за {DateTime.Now.ToString("dd.MM.yyyy")}", dialog.FileName);
+                        MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

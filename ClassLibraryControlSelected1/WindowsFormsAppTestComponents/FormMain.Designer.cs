@@ -35,6 +35,8 @@
             this.buttonBackup = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonChart = new System.Windows.Forms.Button();
+            this.buttonReport = new System.Windows.Forms.Button();
+            this.wordReportComponent1 = new ClassLibraryWordComponent.WordReportComponent(this.components);
             this.SuspendLayout();
             // 
             // controlTree
@@ -42,7 +44,6 @@
             this.controlTree.Location = new System.Drawing.Point(12, 12);
             this.controlTree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.controlTree.Name = "controlTree";
-            this.controlTree.SelectedNode = null;
             this.controlTree.Size = new System.Drawing.Size(511, 237);
             this.controlTree.TabIndex = 0;
             // 
@@ -68,7 +69,7 @@
             // 
             // buttonChart
             // 
-            this.buttonChart.Location = new System.Drawing.Point(215, 292);
+            this.buttonChart.Location = new System.Drawing.Point(151, 292);
             this.buttonChart.Name = "buttonChart";
             this.buttonChart.Size = new System.Drawing.Size(110, 26);
             this.buttonChart.TabIndex = 4;
@@ -76,11 +77,22 @@
             this.buttonChart.UseVisualStyleBackColor = true;
             this.buttonChart.Click += new System.EventHandler(this.buttonChart_Click);
             // 
+            // buttonReport
+            // 
+            this.buttonReport.Location = new System.Drawing.Point(302, 292);
+            this.buttonReport.Name = "buttonReport";
+            this.buttonReport.Size = new System.Drawing.Size(93, 26);
+            this.buttonReport.TabIndex = 5;
+            this.buttonReport.Text = "Отчет";
+            this.buttonReport.UseVisualStyleBackColor = true;
+            this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 330);
+            this.Controls.Add(this.buttonReport);
             this.Controls.Add(this.buttonChart);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.buttonBackup);
@@ -99,6 +111,8 @@
         private System.Windows.Forms.Button buttonBackup;
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonChart;
+        private System.Windows.Forms.Button buttonReport;
+        private ClassLibraryWordComponent.WordReportComponent wordReportComponent1;
     }
 }
 
