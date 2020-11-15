@@ -276,10 +276,6 @@
       <Project>{A56B8F43-4790-4F79-B140-C063B777D968}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ClassLibraryWordComponent\ClassLibraryWordComponent.csproj">
-      <Project>{AC6A60DD-586E-44FE-9D56-94587D602E75}</Project>
-      <Name>ClassLibraryWordComponent</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataBaseImplement\DataBaseImplement.csproj">
       <Project>{84676565-43C4-4736-8ED2-E7173E42D4E6}</Project>
       <Name>DataBaseImplement</Name>

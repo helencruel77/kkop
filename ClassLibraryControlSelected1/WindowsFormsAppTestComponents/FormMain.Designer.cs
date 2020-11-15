@@ -36,7 +36,6 @@
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonChart = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
-            this.wordReportComponent1 = new ClassLibraryWordComponent.WordReportComponent(this.components);
             this.SuspendLayout();
             // 
             // controlTree
@@ -112,7 +111,6 @@
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonChart;
         private System.Windows.Forms.Button buttonReport;
-        private ClassLibraryWordComponent.WordReportComponent wordReportComponent1;
     }
 }
 
