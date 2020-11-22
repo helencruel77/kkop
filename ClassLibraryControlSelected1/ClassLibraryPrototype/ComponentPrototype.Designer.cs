@@ -29,9 +29,10 @@ namespace ClassLibraryPrototype
         /// </summary>
         private void InitializeComponent()
         {
-
+            this.controlTree = new ClassLibraryControlSelected.ControlTreeView();
         }
 
         #endregion
+        private ClassLibraryControlSelected.ControlTreeView controlTree;
     }
 }

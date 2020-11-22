@@ -25,7 +25,7 @@ namespace ClassLibraryPrototype
             InitializeComponent();
         }
 
-        public void CloneProduct (string[] props)
+        public Product CloneProduct (string[] props)
         {
             Category categoryType = Category.Молочка;
             foreach (var item in Enum.GetValues(typeof(Category)))
@@ -35,18 +35,14 @@ namespace ClassLibraryPrototype
                     categoryType = (Category)item;
                 }
             }
+            int? amount = string.IsNullOrEmpty(props[2]) ? (int?)null : Convert.ToInt32(props[2]);
             Product obj = new Product
             {
                 Name = props[0],
                 Category = categoryType,
-                Count = 3
+                Count = amount
             };
-            obj.Clone();
-            nodes.Add(obj.Clone());
-            for (int i= 0; i < nodes.Count; i++)
-            {
-                Console.WriteLine("elem {0} = {1}",i, nodes[i].ToString());
-            }
+            return obj;
         }
     }
 }

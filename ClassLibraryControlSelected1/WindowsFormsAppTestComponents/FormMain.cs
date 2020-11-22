@@ -142,33 +142,8 @@ namespace WindowsFormsAppTestComponents
         private void buttonClone_Click(object sender, EventArgs e)
         {
             string[] elems = controlTree.FullPath;
-            //componentPrototype1.CloneProduct(elems);
-            Category categoryType = Category.Молочка;
-            foreach (var item in Enum.GetValues(typeof(Category)))
-            {
-                if (item.ToString() == elems[1])
-                {
-                    categoryType = (Category)item;
-                }
-            }
-            Product obj = new Product
-            {
-                Name = elems[0],
-                Category = categoryType,
-                Count = 3 //
-            };
-            Type t = obj.GetType();
-            PropertyInfo[] props = t.GetProperties();
-            foreach (var prop in props)
-                if (prop.GetIndexParameters().Length == 0)
-                    Console.WriteLine("   {0} ({1}): {2}", prop.Name,
-                                      prop.PropertyType.Name,
-                                      prop.GetValue(obj));
+            Product obj = componentPrototype1.CloneProduct(elems);
             controlTree.addNode(obj.Clone());
-            for (int i = 0; i < nodes.Count; i++)
-            {
-                Console.WriteLine("elem {0} = {1}", i, nodes[i].ToString());
-            }
         }
     }
 }
