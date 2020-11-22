@@ -35,12 +35,11 @@ namespace ClassLibraryPrototype
                     categoryType = (Category)item;
                 }
             }
-            int? amount = string.IsNullOrEmpty(props[2]) ? (int?)null : Convert.ToInt32(props[2]);
             Product obj = new Product
             {
                 Name = props[0],
                 Category = categoryType,
-                Count = amount
+                Count = string.IsNullOrEmpty(props[2]) ? (int?)null : Convert.ToInt32(props[2])
             };
             return obj;
         }
