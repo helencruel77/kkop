@@ -279,6 +279,10 @@
       <Project>{A56B8F43-4790-4F79-B140-C063B777D968}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryPrototype\ClassLibraryPrototype.csproj">
+      <Project>{F313539D-B69C-4D3D-91AC-01414FEF64DB}</Project>
+      <Name>ClassLibraryPrototype</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataBaseImplement\DataBaseImplement.csproj">
       <Project>{84676565-43C4-4736-8ED2-E7173E42D4E6}</Project>
       <Name>DataBaseImplement</Name>

@@ -32,11 +32,13 @@
             this.controlTree = new ClassLibraryControlSelected.ControlTreeView();
             this.componentSaveDataBinary = new WindowsFormsComponentLibrary.Data.ComponentSaveDataBinary(this.components);
             this.componentWordChart = new KOP_laba2.ComponentWord(this.components);
-            this.wordReportComponent = new ClassLibraryWordComponent.WordReportComponent();
+            this.wordReportComponent = new ClassLibraryWordComponent.WordReportComponent(this.components);
             this.buttonBackup = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonChart = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
+            this.buttonClone = new System.Windows.Forms.Button();
+            this.componentPrototype1 = new ClassLibraryPrototype.ComponentPrototype(this.components);
             this.SuspendLayout();
             // 
             // controlTree
@@ -87,11 +89,22 @@
             this.buttonReport.UseVisualStyleBackColor = true;
             this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
             // 
+            // buttonClone
+            // 
+            this.buttonClone.Location = new System.Drawing.Point(551, 292);
+            this.buttonClone.Name = "buttonClone";
+            this.buttonClone.Size = new System.Drawing.Size(109, 26);
+            this.buttonClone.TabIndex = 6;
+            this.buttonClone.Text = "Клонировать";
+            this.buttonClone.UseVisualStyleBackColor = true;
+            this.buttonClone.Click += new System.EventHandler(this.buttonClone_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 330);
+            this.ClientSize = new System.Drawing.Size(688, 330);
+            this.Controls.Add(this.buttonClone);
             this.Controls.Add(this.buttonReport);
             this.Controls.Add(this.buttonChart);
             this.Controls.Add(this.buttonCreate);
@@ -113,6 +126,8 @@
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonChart;
         private System.Windows.Forms.Button buttonReport;
+        private System.Windows.Forms.Button buttonClone;
+        private ClassLibraryPrototype.ComponentPrototype componentPrototype1;
     }
 }
 

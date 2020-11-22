@@ -4,8 +4,8 @@ using DataBaseImplement.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 using Unity;
 
@@ -17,13 +17,15 @@ namespace WindowsFormsAppTestComponents
         public new IUnityContainer Container { get; set; }
 
         private readonly IProductLogic logic;
-
+        List<object> nodes = new List<object>();
 
         public FormMain(IProductLogic logic)
         {
             InitializeComponent();
             this.logic = logic;
             controlTree.Order("Name", "Category", "Count");
+            
+
         }
 
         private void LoadData()
@@ -38,6 +40,7 @@ namespace WindowsFormsAppTestComponents
                 }
                 controlTree.BuildTree(list);
             }
+            
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
@@ -133,6 +136,38 @@ namespace WindowsFormsAppTestComponents
                         MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void buttonClone_Click(object sender, EventArgs e)
+        {
+            string[] elems = controlTree.FullPath;
+            //componentPrototype1.CloneProduct(elems);
+            Category categoryType = Category.Молочка;
+            foreach (var item in Enum.GetValues(typeof(Category)))
+            {
+                if (item.ToString() == elems[1])
+                {
+                    categoryType = (Category)item;
+                }
+            }
+            Product obj = new Product
+            {
+                Name = elems[0],
+                Category = categoryType,
+                Count = 3 //
+            };
+            Type t = obj.GetType();
+            PropertyInfo[] props = t.GetProperties();
+            foreach (var prop in props)
+                if (prop.GetIndexParameters().Length == 0)
+                    Console.WriteLine("   {0} ({1}): {2}", prop.Name,
+                                      prop.PropertyType.Name,
+                                      prop.GetValue(obj));
+            controlTree.addNode(obj.Clone());
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                Console.WriteLine("elem {0} = {1}", i, nodes[i].ToString());
             }
         }
     }
