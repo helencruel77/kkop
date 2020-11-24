@@ -32,6 +32,9 @@ namespace DataBaseImplement.Migrations
                     b.Property<int?>("Count")
                         .HasColumnType("int");
 
+                    b.Property<string>("KindOFProduct")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

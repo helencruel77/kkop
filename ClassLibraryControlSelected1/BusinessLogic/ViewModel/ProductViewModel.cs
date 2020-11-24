@@ -21,5 +21,8 @@ namespace BusinessLogic.ViewModel
 
         [DisplayName("Категория")]
         public Category Category { get; set; }
+
+        [DisplayName("Вид продукта")]
+        public string KindOFProduct { get; set; }
     }
 }

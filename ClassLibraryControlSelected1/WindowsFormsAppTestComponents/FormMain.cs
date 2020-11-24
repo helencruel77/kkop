@@ -17,13 +17,12 @@ namespace WindowsFormsAppTestComponents
         public new IUnityContainer Container { get; set; }
 
         private readonly IProductLogic logic;
-        List<object> nodes = new List<object>();
 
         public FormMain(IProductLogic logic)
         {
             InitializeComponent();
             this.logic = logic;
-            controlTree.Order("Name", "Category", "Count");
+            controlTree.Order("Name", "Category", "Count", "KindOFProduct");
             
 
         }
@@ -114,7 +113,8 @@ namespace WindowsFormsAppTestComponents
                     Id = product.Id,
                     Name = product.Name,
                     Category = product.Category,
-                    Count = product.Count
+                    Count = product.Count,
+                    KindOFProduct = product.KindOFProduct
                 };
                 count++;
             }

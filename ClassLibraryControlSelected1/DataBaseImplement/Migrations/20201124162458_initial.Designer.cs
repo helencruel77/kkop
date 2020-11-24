@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataBaseImplement.Migrations
 {
     [DbContext(typeof(ProductDatabase))]
-    [Migration("20201121163656_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201124162458_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,9 @@ namespace DataBaseImplement.Migrations
 
                     b.Property<int?>("Count")
                         .HasColumnType("int");
+
+                    b.Property<string>("KindOFProduct")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

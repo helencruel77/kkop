@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseImplement", "DataBa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryPrototype", "ClassLibraryPrototype\ClassLibraryPrototype.csproj", "{F313539D-B69C-4D3D-91AC-01414FEF64DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryDecorator", "ClassLibraryDecorator\ClassLibraryDecorator.csproj", "{4AFB87C7-D2F5-493E-95EA-812609FE2A30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{F313539D-B69C-4D3D-91AC-01414FEF64DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F313539D-B69C-4D3D-91AC-01414FEF64DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F313539D-B69C-4D3D-91AC-01414FEF64DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AFB87C7-D2F5-493E-95EA-812609FE2A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AFB87C7-D2F5-493E-95EA-812609FE2A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AFB87C7-D2F5-493E-95EA-812609FE2A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AFB87C7-D2F5-493E-95EA-812609FE2A30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

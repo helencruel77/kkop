@@ -19,6 +19,8 @@ namespace DataBaseImplement.Models
         [Required]
         public Category Category { get; set; }
 
+        public string KindOFProduct { get; set; }
+
         public object Clone()
         {
             return new Product
