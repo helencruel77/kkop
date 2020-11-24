@@ -21,6 +21,8 @@ namespace DataBaseImplement.Models
 
         public string KindOFProduct { get; set; }
 
+        public int Price { get; set; }
+
         public object Clone()
         {
             return new Product

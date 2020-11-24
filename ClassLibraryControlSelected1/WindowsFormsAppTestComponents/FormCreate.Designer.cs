@@ -36,6 +36,11 @@
             this.buttonCreate = new System.Windows.Forms.Button();
             this.controlSelectedComboBoxEnum = new WindowsFormsControlLibrary.Selected.ControlSelectedComboBoxEnum();
             this.userControlDecorator1 = new ClassLibraryDecorator.UserControlDecorator();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.userControlInterpreter1 = new ClassLibraryInterpreter.UserControlInterpreter();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxCost = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +87,7 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(102, 263);
+            this.buttonCreate.Location = new System.Drawing.Point(15, 360);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(134, 26);
             this.buttonCreate.TabIndex = 5;
@@ -101,16 +106,61 @@
             // 
             // userControlDecorator1
             // 
-            this.userControlDecorator1.Location = new System.Drawing.Point(12, 168);
+            this.userControlDecorator1.Location = new System.Drawing.Point(15, 250);
             this.userControlDecorator1.Name = "userControlDecorator1";
             this.userControlDecorator1.Size = new System.Drawing.Size(165, 89);
             this.userControlDecorator1.TabIndex = 7;
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(84, 182);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(195, 20);
+            this.textBoxPrice.TabIndex = 8;
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.textBoxPrice_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 185);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Цена:";
+            // 
+            // userControlInterpreter1
+            // 
+            this.userControlInterpreter1.Location = new System.Drawing.Point(165, 356);
+            this.userControlInterpreter1.Name = "userControlInterpreter1";
+            this.userControlInterpreter1.Size = new System.Drawing.Size(150, 30);
+            this.userControlInterpreter1.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 227);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Стоиомость:";
+            // 
+            // textBoxCost
+            // 
+            this.textBoxCost.Location = new System.Drawing.Point(84, 224);
+            this.textBoxCost.Name = "textBoxCost";
+            this.textBoxCost.Size = new System.Drawing.Size(195, 20);
+            this.textBoxCost.TabIndex = 12;
             // 
             // FormCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 307);
+            this.ClientSize = new System.Drawing.Size(327, 407);
+            this.Controls.Add(this.textBoxCost);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.userControlInterpreter1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.userControlDecorator1);
             this.Controls.Add(this.controlSelectedComboBoxEnum);
             this.Controls.Add(this.buttonCreate);
@@ -136,5 +186,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonCreate;
         private ClassLibraryDecorator.UserControlDecorator userControlDecorator1;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.Label label4;
+        private ClassLibraryInterpreter.UserControlInterpreter userControlInterpreter1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxCost;
     }
 }

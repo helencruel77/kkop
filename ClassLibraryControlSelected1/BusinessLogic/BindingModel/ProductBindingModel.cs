@@ -18,5 +18,7 @@ namespace BusinessLogic.BindingModel
         public Category Category { get; set; }
 
         public string KindOFProduct { get; set; }
+
+        public int Price { get; set; }
     }
 }

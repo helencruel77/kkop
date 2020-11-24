@@ -24,5 +24,8 @@ namespace BusinessLogic.ViewModel
 
         [DisplayName("Вид продукта")]
         public string KindOFProduct { get; set; }
+
+        [DisplayName("Цена")]
+        public int Price { get; set; }
     }
 }
