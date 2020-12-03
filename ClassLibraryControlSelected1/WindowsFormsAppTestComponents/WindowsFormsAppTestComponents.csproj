@@ -287,6 +287,10 @@
       <Project>{2AD52A0F-68F6-4B15-AC85-FD46872167E5}</Project>
       <Name>ClassLibraryInterpreter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryPlugins\ClassLibraryPlugins.csproj">
+      <Project>{03eaeafd-40c8-4363-97ca-8673c945f71e}</Project>
+      <Name>ClassLibraryPlugins</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClassLibraryPrototype\ClassLibraryPrototype.csproj">
       <Project>{F313539D-B69C-4D3D-91AC-01414FEF64DB}</Project>
       <Name>ClassLibraryPrototype</Name>

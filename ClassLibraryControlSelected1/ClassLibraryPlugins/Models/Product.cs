@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataBaseImplement.Models
+namespace ClassLibraryPlugins.Models
 {
-    public class Product : ICloneable
+    public class Product
     {
         public int Id { get; set; }
 
@@ -22,16 +22,5 @@ namespace DataBaseImplement.Models
         public string KindOFProduct { get; set; }
 
         public int Price { get; set; }
-
-        public object Clone()
-        {
-            return new Product
-            {
-                Id = Id,
-                Name = Name,
-                Category = Category,
-                Count = Count
-            };
-        }
     }
 }

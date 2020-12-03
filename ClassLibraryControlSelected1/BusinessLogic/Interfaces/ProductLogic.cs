@@ -1,7 +1,7 @@
 ﻿using BusinessLogic.BindingModel;
 using BusinessLogic.ViewModel;
+using ClassLibraryPlugins.Models;
 using DataBaseImplement;
-using DataBaseImplement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

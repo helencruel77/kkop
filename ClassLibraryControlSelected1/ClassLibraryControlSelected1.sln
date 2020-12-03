@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryDecorator", "Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryInterpreter", "ClassLibraryInterpreter\ClassLibraryInterpreter.csproj", "{2AD52A0F-68F6-4B15-AC85-FD46872167E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryPlugins", "ClassLibraryPlugins\ClassLibraryPlugins.csproj", "{03EAEAFD-40C8-4363-97CA-8673C945F71E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginChange", "PluginChange\PluginChange.csproj", "{5BE759FF-7D14-4776-BAA8-C7A68160C91A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{2AD52A0F-68F6-4B15-AC85-FD46872167E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AD52A0F-68F6-4B15-AC85-FD46872167E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AD52A0F-68F6-4B15-AC85-FD46872167E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03EAEAFD-40C8-4363-97CA-8673C945F71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03EAEAFD-40C8-4363-97CA-8673C945F71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03EAEAFD-40C8-4363-97CA-8673C945F71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03EAEAFD-40C8-4363-97CA-8673C945F71E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE759FF-7D14-4776-BAA8-C7A68160C91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE759FF-7D14-4776-BAA8-C7A68160C91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE759FF-7D14-4776-BAA8-C7A68160C91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE759FF-7D14-4776-BAA8-C7A68160C91A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

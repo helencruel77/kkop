@@ -39,6 +39,11 @@
             this.buttonReport = new System.Windows.Forms.Button();
             this.buttonClone = new System.Windows.Forms.Button();
             this.componentPrototype1 = new ClassLibraryPrototype.ComponentPrototype(this.components);
+            this.comboBoxPlugins = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxCategory = new System.Windows.Forms.TextBox();
+            this.buttonChange = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // controlTree
@@ -46,6 +51,7 @@
             this.controlTree.Location = new System.Drawing.Point(12, 12);
             this.controlTree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.controlTree.Name = "controlTree";
+            this.controlTree.SelectedNode = null;
             this.controlTree.Size = new System.Drawing.Size(511, 237);
             this.controlTree.TabIndex = 0;
             // 
@@ -99,11 +105,59 @@
             this.buttonClone.UseVisualStyleBackColor = true;
             this.buttonClone.Click += new System.EventHandler(this.buttonClone_Click);
             // 
+            // comboBoxPlugins
+            // 
+            this.comboBoxPlugins.FormattingEnabled = true;
+            this.comboBoxPlugins.Location = new System.Drawing.Point(528, 39);
+            this.comboBoxPlugins.Name = "comboBoxPlugins";
+            this.comboBoxPlugins.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxPlugins.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(525, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Плагины:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(525, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Категория:";
+            // 
+            // textBoxCategory
+            // 
+            this.textBoxCategory.Location = new System.Drawing.Point(528, 114);
+            this.textBoxCategory.Name = "textBoxCategory";
+            this.textBoxCategory.Size = new System.Drawing.Size(144, 20);
+            this.textBoxCategory.TabIndex = 10;
+            // 
+            // buttonChange
+            // 
+            this.buttonChange.Location = new System.Drawing.Point(528, 165);
+            this.buttonChange.Name = "buttonChange";
+            this.buttonChange.Size = new System.Drawing.Size(144, 23);
+            this.buttonChange.TabIndex = 11;
+            this.buttonChange.Text = "Изменить категорию";
+            this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 330);
+            this.Controls.Add(this.buttonChange);
+            this.Controls.Add(this.textBoxCategory);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBoxPlugins);
             this.Controls.Add(this.buttonClone);
             this.Controls.Add(this.buttonReport);
             this.Controls.Add(this.buttonChart);
@@ -114,6 +168,7 @@
             this.Text = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -128,6 +183,11 @@
         private System.Windows.Forms.Button buttonReport;
         private System.Windows.Forms.Button buttonClone;
         private ClassLibraryPrototype.ComponentPrototype componentPrototype1;
+        private System.Windows.Forms.ComboBox comboBoxPlugins;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxCategory;
+        private System.Windows.Forms.Button buttonChange;
     }
 }
 

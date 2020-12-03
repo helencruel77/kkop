@@ -165,15 +165,18 @@
     </Compile>
     <Compile Include="Migrations\ProductDatabaseModelSnapshot.cs" />
     <Compile Include="ProductDatabase.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryPlugins\ClassLibraryPlugins.csproj">
+      <Project>{03eaeafd-40c8-4363-97ca-8673c945f71e}</Project>
+      <Name>ClassLibraryPlugins</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

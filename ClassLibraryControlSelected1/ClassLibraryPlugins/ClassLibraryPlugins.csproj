@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F313539D-B69C-4D3D-91AC-01414FEF64DB}</ProjectGuid>
+    <ProjectGuid>{03EAEAFD-40C8-4363-97CA-8673C945F71E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibraryPrototype</RootNamespace>
-    <AssemblyName>ClassLibraryPrototype</AssemblyName>
+    <RootNamespace>ClassLibraryPlugins</RootNamespace>
+    <AssemblyName>ClassLibraryPlugins</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,12 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClassLibraryControlSelected">
-      <HintPath>..\LibraryControlComponent\ClassLibraryControlSelected.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,28 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComponentPrototype.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ComponentPrototype.Designer.cs">
-      <DependentUpon>ComponentPrototype.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Interfaces\IChange.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="PluginManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ComponentPrototype.resx">
-      <DependentUpon>ComponentPrototype.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryPlugins\ClassLibraryPlugins.csproj">
-      <Project>{03eaeafd-40c8-4363-97ca-8673c945f71e}</Project>
-      <Name>ClassLibraryPlugins</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataBaseImplement\DataBaseImplement.csproj">
-      <Project>{84676565-43c4-4736-8ed2-e7173e42d4e6}</Project>
-      <Name>DataBaseImplement</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

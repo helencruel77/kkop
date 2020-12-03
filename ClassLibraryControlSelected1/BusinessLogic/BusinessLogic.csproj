@@ -123,6 +123,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryPlugins\ClassLibraryPlugins.csproj">
+      <Project>{03eaeafd-40c8-4363-97ca-8673c945f71e}</Project>
+      <Name>ClassLibraryPlugins</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataBaseImplement\DataBaseImplement.csproj">
       <Project>{84676565-43C4-4736-8ED2-E7173E42D4E6}</Project>
       <Name>DataBaseImplement</Name>

@@ -1,6 +1,7 @@
 ﻿using BusinessLogic.Interfaces;
 using BusinessLogic.ViewModel;
-using DataBaseImplement.Models;
+using ClassLibraryPlugins;
+using ClassLibraryPlugins.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,6 +17,7 @@ namespace WindowsFormsAppTestComponents
         [Dependency]
         public new IUnityContainer Container { get; set; }
 
+        private readonly PluginManager manager;
         private readonly IProductLogic logic;
 
         public FormMain(IProductLogic logic)
@@ -23,8 +25,13 @@ namespace WindowsFormsAppTestComponents
             InitializeComponent();
             this.logic = logic;
             controlTree.Order("Name", "Category", "Count", "KindOFProduct");
-            
 
+            manager = new PluginManager();
+            if(manager.Headers != null && manager.Headers.Count() != 0)
+            {
+                comboBoxPlugins.Items.AddRange(manager.Headers.ToArray());
+                comboBoxPlugins.Text = comboBoxPlugins.Items[0].ToString();
+            }
         }
 
         private void LoadData()
@@ -39,7 +46,6 @@ namespace WindowsFormsAppTestComponents
                 }
                 controlTree.BuildTree(list);
             }
-            
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
@@ -143,7 +149,47 @@ namespace WindowsFormsAppTestComponents
         {
             string[] elems = controlTree.FullPath;
             Product obj = componentPrototype1.CloneProduct(elems);
-            controlTree.addNode(obj.Clone());
+           // controlTree.addNode(obj.Clone());
+        }
+
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            if (manager == null)
+            {
+                return;
+            }
+            if (comboBoxPlugins.SelectedItem != null)
+            {
+                if (string.IsNullOrEmpty(controlTree.SelectedNode))
+                {
+                    MessageBox.Show("Выберите продукт", "Ошибка");
+                    return;
+                }
+                var product = logic.Read(null)[controlTree.Index];
+                string cng = comboBoxPlugins.Text;
+
+                Category categoryType = Category.Молочка;
+                foreach (var item in Enum.GetValues(typeof(Category)))
+                {
+                    if (item.ToString() == textBoxCategory.Text)
+                    {
+                        categoryType = (Category)item;
+                    }
+                }
+
+                Product obj = new Product
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    KindOFProduct = product.KindOFProduct,
+                    Category = product.Category,
+                    Count = product.Count
+                };
+
+                manager.Changers[cng](obj, categoryType);
+
+                controlTree.SelectedNode = obj.Category.ToString();
+            }
         }
     }
 }
