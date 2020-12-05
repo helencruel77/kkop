@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Interfaces;
+﻿using BusinessLogic.BindingModel;
+using BusinessLogic.Interfaces;
 using BusinessLogic.ViewModel;
 using ClassLibraryPlugins;
 using ClassLibraryPlugins.Models;
@@ -36,6 +37,7 @@ namespace WindowsFormsAppTestComponents
 
         private void LoadData()
         {
+            controlTree.ClearNodes();
             List<ProductViewModel> list = new List<ProductViewModel>();
             var products = logic.Read(null);
             if (products != null)
@@ -187,8 +189,25 @@ namespace WindowsFormsAppTestComponents
                 };
 
                 manager.Changers[cng](obj, categoryType);
-
-                controlTree.SelectedNode = obj.Category.ToString();
+                try
+                {
+                    logic.CreateOrUpdate(new ProductBindingModel
+                    {
+                        Id = obj.Id,
+                        Name = obj.Name,
+                        Category = obj.Category,
+                        Count = obj.Count,
+                        KindOFProduct = obj.KindOFProduct,
+                        Price = obj.Price
+                    });
+                    MessageBox.Show("Категория изменена", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.OK;
+                    LoadData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

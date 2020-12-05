@@ -18,11 +18,6 @@ namespace PluginChange
         public void Change(Product obj, Category value)
         {
             obj.Category = value;
-
-            Console.WriteLine(obj.Name);
-            Console.WriteLine(obj.Category);
-            Console.WriteLine(obj.Count);
-            Console.WriteLine(obj.KindOFProduct);
         }
     }
 }
