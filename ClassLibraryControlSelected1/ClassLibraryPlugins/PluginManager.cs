@@ -20,8 +20,12 @@ namespace ClassLibraryPlugins
         [ImportMany(typeof(IAdd<Product>))]
         IEnumerable<IAdd<Product>> Adds { get; set; }
 
+        [ImportMany(typeof(IWaybill<Product>))]
+        IEnumerable<IWaybill<Product>> Waybills { get; set; }
+
         public readonly Dictionary<string, Action<Product, Category>> ChangersDict = new Dictionary<string, Action<Product, Category>>();
         public readonly Dictionary<string, Action<Product, int>> AddsDict = new Dictionary<string, Action<Product, int>>();
+        public readonly Dictionary<string, Action<Product>> WaybillsDict = new Dictionary<string, Action<Product>>();
 
         public List<string> Headers { get; set; } = new List<string>();
 
@@ -47,6 +51,15 @@ namespace ClassLibraryPlugins
                 Adds.ToList().ForEach(s =>
                 {
                     AddsDict.Add(s.Name, s.AddToSklad);
+                    Headers.Add(s.Name);
+                });
+            }
+
+            if (Waybills.Count() != 0)
+            {
+                Waybills.ToList().ForEach(s =>
+                {
+                    WaybillsDict.Add(s.Name, s.Create);
                     Headers.Add(s.Name);
                 });
             }

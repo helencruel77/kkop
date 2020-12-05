@@ -38,7 +38,6 @@
             this.buttonChart = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
             this.buttonClone = new System.Windows.Forms.Button();
-            this.componentPrototype1 = new ClassLibraryPrototype.ComponentPrototype(this.components);
             this.comboBoxPlugins = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxAdd = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.componentPrototype1 = new ClassLibraryPrototype.ComponentPrototype(this.components);
+            this.buttonCreateWaybill = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // controlTree
@@ -177,11 +178,22 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // buttonCreateWaybill
+            // 
+            this.buttonCreateWaybill.Location = new System.Drawing.Point(528, 213);
+            this.buttonCreateWaybill.Name = "buttonCreateWaybill";
+            this.buttonCreateWaybill.Size = new System.Drawing.Size(319, 23);
+            this.buttonCreateWaybill.TabIndex = 15;
+            this.buttonCreateWaybill.Text = "Сформировтаь накладную";
+            this.buttonCreateWaybill.UseVisualStyleBackColor = true;
+            this.buttonCreateWaybill.Click += new System.EventHandler(this.buttonCreateWaybill_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 330);
+            this.Controls.Add(this.buttonCreateWaybill);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxAdd);
             this.Controls.Add(this.label3);
@@ -223,6 +235,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxAdd;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonCreateWaybill;
     }
 }
 

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\IAdd.cs" />
     <Compile Include="Interfaces\IChange.cs" />
+    <Compile Include="Interfaces\IWaybill.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="PluginManager.cs" />

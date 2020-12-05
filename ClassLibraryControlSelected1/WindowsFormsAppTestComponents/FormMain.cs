@@ -213,6 +213,10 @@ namespace WindowsFormsAppTestComponents
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            if (manager == null)
+            {
+                return;
+            }
             if (string.IsNullOrEmpty(controlTree.SelectedNode))
             {
                 MessageBox.Show("Выберите продукт", "Ошибка");
@@ -252,6 +256,31 @@ namespace WindowsFormsAppTestComponents
                     MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void buttonCreateWaybill_Click(object sender, EventArgs e)
+        {
+            if (manager == null)
+            {
+                return;
+            }
+            if (string.IsNullOrEmpty(controlTree.SelectedNode))
+            {
+                MessageBox.Show("Выберите продукт", "Ошибка");
+                return;
+            }
+            var product = logic.Read(null)[controlTree.Index];
+            string cng = comboBoxPlugins.Text;
+
+            Product obj = new Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                KindOFProduct = product.KindOFProduct,
+                Category = product.Category,
+                Count = product.Count
+            };
+            manager.WaybillsDict[cng](obj);
         }
     }
 }
