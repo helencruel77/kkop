@@ -15,9 +15,13 @@ namespace ClassLibraryPlugins
     public class PluginManager
     {
         [ImportMany(typeof(IChange<Product, Category>))]
-        IEnumerable<IChange<Product, Category>> Plugins { get; set; }
+        IEnumerable<IChange<Product, Category>> Changers { get; set; }
 
-        public readonly Dictionary<string, Action<Product, Category>> Changers = new Dictionary<string, Action<Product, Category>>();
+        [ImportMany(typeof(IAdd<Product>))]
+        IEnumerable<IAdd<Product>> Adds { get; set; }
+
+        public readonly Dictionary<string, Action<Product, Category>> ChangersDict = new Dictionary<string, Action<Product, Category>>();
+        public readonly Dictionary<string, Action<Product, int>> AddsDict = new Dictionary<string, Action<Product, int>>();
 
         public List<string> Headers { get; set; } = new List<string>();
 
@@ -29,15 +33,24 @@ namespace ClassLibraryPlugins
             CompositionContainer container = new CompositionContainer(catalog);
             container.ComposeParts(this);
 
-            if (Plugins.Count() != 0)
+            if (Changers.Count() != 0)
             {
-                Plugins.ToList().ForEach(p =>
+                Changers.ToList().ForEach(p =>
                 {
-                    Changers.Add(p.Name, p.Change);
+                    ChangersDict.Add(p.Name, p.Change);
                     Headers.Add(p.Name);
                 });
             }
-            
+
+            if (Adds.Count() != 0)
+            {
+                Adds.ToList().ForEach(s =>
+                {
+                    AddsDict.Add(s.Name, s.AddToSklad);
+                    Headers.Add(s.Name);
+                });
+            }
+
         }
     }
 }

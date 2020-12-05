@@ -188,7 +188,7 @@ namespace WindowsFormsAppTestComponents
                     Count = product.Count
                 };
 
-                manager.Changers[cng](obj, categoryType);
+                manager.ChangersDict[cng](obj, categoryType);
                 try
                 {
                     logic.CreateOrUpdate(new ProductBindingModel
@@ -201,6 +201,49 @@ namespace WindowsFormsAppTestComponents
                         Price = obj.Price
                     });
                     MessageBox.Show("Категория изменена", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.OK;
+                    LoadData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(controlTree.SelectedNode))
+            {
+                MessageBox.Show("Выберите продукт", "Ошибка");
+                return;
+            }
+            var product = logic.Read(null)[controlTree.Index];
+            string cng = comboBoxPlugins.Text;
+
+            Product obj = new Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                KindOFProduct = product.KindOFProduct,
+                Category = product.Category,
+                Count = product.Count
+            };
+            if (textBoxAdd.Text != null)
+            {
+                manager.AddsDict[cng](obj, Convert.ToInt32(textBoxAdd.Text));
+                try
+                {
+                    logic.CreateOrUpdate(new ProductBindingModel
+                    {
+                        Id = obj.Id,
+                        Name = obj.Name,
+                        Category = obj.Category,
+                        Count = obj.Count,
+                        KindOFProduct = obj.KindOFProduct,
+                        Price = obj.Price
+                    });
+                    MessageBox.Show("Склад пополнен", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DialogResult = DialogResult.OK;
                     LoadData();
                 }

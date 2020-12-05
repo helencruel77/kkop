@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryPlugins", "Clas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginChange", "PluginChange\PluginChange.csproj", "{5BE759FF-7D14-4776-BAA8-C7A68160C91A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginAddSklad", "PluginAddSklad\PluginAddSklad.csproj", "{10B413B3-87AC-4FC0-914C-83F5C1D3EF6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{5BE759FF-7D14-4776-BAA8-C7A68160C91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BE759FF-7D14-4776-BAA8-C7A68160C91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BE759FF-7D14-4776-BAA8-C7A68160C91A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10B413B3-87AC-4FC0-914C-83F5C1D3EF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B413B3-87AC-4FC0-914C-83F5C1D3EF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B413B3-87AC-4FC0-914C-83F5C1D3EF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B413B3-87AC-4FC0-914C-83F5C1D3EF6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -44,6 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.buttonChange = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxAdd = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // controlTree
@@ -110,7 +113,7 @@
             this.comboBoxPlugins.FormattingEnabled = true;
             this.comboBoxPlugins.Location = new System.Drawing.Point(528, 39);
             this.comboBoxPlugins.Name = "comboBoxPlugins";
-            this.comboBoxPlugins.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxPlugins.Size = new System.Drawing.Size(319, 21);
             this.comboBoxPlugins.TabIndex = 7;
             // 
             // label1
@@ -148,11 +151,40 @@
             this.buttonChange.UseVisualStyleBackColor = true;
             this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(700, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Пополнить склад:";
+            // 
+            // textBoxAdd
+            // 
+            this.textBoxAdd.Location = new System.Drawing.Point(703, 114);
+            this.textBoxAdd.Name = "textBoxAdd";
+            this.textBoxAdd.Size = new System.Drawing.Size(144, 20);
+            this.textBoxAdd.TabIndex = 13;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(703, 165);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(144, 23);
+            this.buttonAdd.TabIndex = 14;
+            this.buttonAdd.Text = "Пополнить склад";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 330);
+            this.ClientSize = new System.Drawing.Size(975, 330);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.textBoxAdd);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.textBoxCategory);
             this.Controls.Add(this.label2);
@@ -188,6 +220,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.Button buttonChange;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxAdd;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
 
