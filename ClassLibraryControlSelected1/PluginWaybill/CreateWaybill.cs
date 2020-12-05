@@ -22,7 +22,6 @@ namespace PluginWaybill
 
         public void Create(Product obj)
         {
-            Console.WriteLine("dfdfdfdf");
             Document document = new Document();
             DefineStyles(document);
             Section section = document.AddSection();
