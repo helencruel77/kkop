@@ -246,6 +246,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdd.Designer.cs">
+      <DependentUpon>FormAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChangeCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChangeCategory.Designer.cs">
+      <DependentUpon>FormChangeCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +272,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdd.resx">
+      <DependentUpon>FormAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChangeCategory.resx">
+      <DependentUpon>FormChangeCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
     </EmbeddedResource>

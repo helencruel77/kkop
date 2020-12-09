@@ -40,14 +40,8 @@
             this.buttonClone = new System.Windows.Forms.Button();
             this.comboBoxPlugins = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxCategory = new System.Windows.Forms.TextBox();
-            this.buttonChange = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxAdd = new System.Windows.Forms.TextBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.componentPrototype1 = new ClassLibraryPrototype.ComponentPrototype(this.components);
-            this.buttonCreateWaybill = new System.Windows.Forms.Button();
+            this.buttonPlugin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // controlTree
@@ -126,80 +120,22 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Плагины:";
             // 
-            // label2
+            // buttonPlugin
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(525, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Категория:";
-            // 
-            // textBoxCategory
-            // 
-            this.textBoxCategory.Location = new System.Drawing.Point(528, 114);
-            this.textBoxCategory.Name = "textBoxCategory";
-            this.textBoxCategory.Size = new System.Drawing.Size(144, 20);
-            this.textBoxCategory.TabIndex = 10;
-            // 
-            // buttonChange
-            // 
-            this.buttonChange.Location = new System.Drawing.Point(528, 165);
-            this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(144, 23);
-            this.buttonChange.TabIndex = 11;
-            this.buttonChange.Text = "Изменить категорию";
-            this.buttonChange.UseVisualStyleBackColor = true;
-            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(700, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Пополнить склад:";
-            // 
-            // textBoxAdd
-            // 
-            this.textBoxAdd.Location = new System.Drawing.Point(703, 114);
-            this.textBoxAdd.Name = "textBoxAdd";
-            this.textBoxAdd.Size = new System.Drawing.Size(144, 20);
-            this.textBoxAdd.TabIndex = 13;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(703, 165);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(144, 23);
-            this.buttonAdd.TabIndex = 14;
-            this.buttonAdd.Text = "Пополнить склад";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonCreateWaybill
-            // 
-            this.buttonCreateWaybill.Location = new System.Drawing.Point(528, 213);
-            this.buttonCreateWaybill.Name = "buttonCreateWaybill";
-            this.buttonCreateWaybill.Size = new System.Drawing.Size(319, 23);
-            this.buttonCreateWaybill.TabIndex = 15;
-            this.buttonCreateWaybill.Text = "Сформировтаь накладную";
-            this.buttonCreateWaybill.UseVisualStyleBackColor = true;
-            this.buttonCreateWaybill.Click += new System.EventHandler(this.buttonCreateWaybill_Click);
+            this.buttonPlugin.Location = new System.Drawing.Point(614, 84);
+            this.buttonPlugin.Name = "buttonPlugin";
+            this.buttonPlugin.Size = new System.Drawing.Size(133, 23);
+            this.buttonPlugin.TabIndex = 16;
+            this.buttonPlugin.Text = "Плагин";
+            this.buttonPlugin.UseVisualStyleBackColor = true;
+            this.buttonPlugin.Click += new System.EventHandler(this.buttonPlugin_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 330);
-            this.Controls.Add(this.buttonCreateWaybill);
-            this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.textBoxAdd);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.buttonChange);
-            this.Controls.Add(this.textBoxCategory);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.buttonPlugin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxPlugins);
             this.Controls.Add(this.buttonClone);
@@ -229,13 +165,7 @@
         private ClassLibraryPrototype.ComponentPrototype componentPrototype1;
         private System.Windows.Forms.ComboBox comboBoxPlugins;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxCategory;
-        private System.Windows.Forms.Button buttonChange;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxAdd;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonCreateWaybill;
+        private System.Windows.Forms.Button buttonPlugin;
     }
 }
 

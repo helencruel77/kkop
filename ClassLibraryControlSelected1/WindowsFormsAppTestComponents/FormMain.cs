@@ -154,14 +154,30 @@ namespace WindowsFormsAppTestComponents
            // controlTree.addNode(obj.Clone());
         }
 
-        private void buttonChange_Click(object sender, EventArgs e)
+        private void buttonPlugin_Click(object sender, EventArgs e)
         {
-            if (manager == null)
+            if(comboBoxPlugins.Text == "Изменение категории продуктов")
             {
-                return;
+                var product = logic.Read(null)[controlTree.Index];
+                string cng = comboBoxPlugins.Text;
+                var form = new FormChangeCategory(cng, product, manager, logic);
+                form.ShowDialog();
+                LoadData();
             }
-            if (comboBoxPlugins.SelectedItem != null)
+            else if (comboBoxPlugins.Text == "Пополнение склада")
             {
+                var product = logic.Read(null)[controlTree.Index];
+                string cng = comboBoxPlugins.Text;
+                var form = new FormAdd(cng, product, manager, logic);
+                form.ShowDialog();
+                LoadData();
+            }
+            else if(comboBoxPlugins.Text == "Формирование накладной")
+            {
+                if (manager == null)
+                {
+                    return;
+                }
                 if (string.IsNullOrEmpty(controlTree.SelectedNode))
                 {
                     MessageBox.Show("Выберите продукт", "Ошибка");
@@ -169,15 +185,6 @@ namespace WindowsFormsAppTestComponents
                 }
                 var product = logic.Read(null)[controlTree.Index];
                 string cng = comboBoxPlugins.Text;
-
-                Category categoryType = Category.Молочка;
-                foreach (var item in Enum.GetValues(typeof(Category)))
-                {
-                    if (item.ToString() == textBoxCategory.Text)
-                    {
-                        categoryType = (Category)item;
-                    }
-                }
 
                 Product obj = new Product
                 {
@@ -187,100 +194,8 @@ namespace WindowsFormsAppTestComponents
                     Category = product.Category,
                     Count = product.Count
                 };
-
-                manager.ChangersDict[cng](obj, categoryType);
-                try
-                {
-                    logic.CreateOrUpdate(new ProductBindingModel
-                    {
-                        Id = obj.Id,
-                        Name = obj.Name,
-                        Category = obj.Category,
-                        Count = obj.Count,
-                        KindOFProduct = obj.KindOFProduct,
-                        Price = obj.Price
-                    });
-                    MessageBox.Show("Категория изменена", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DialogResult = DialogResult.OK;
-                    LoadData();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                manager.WaybillsDict[cng](obj);
             }
-        }
-
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
-            if (manager == null)
-            {
-                return;
-            }
-            if (string.IsNullOrEmpty(controlTree.SelectedNode))
-            {
-                MessageBox.Show("Выберите продукт", "Ошибка");
-                return;
-            }
-            var product = logic.Read(null)[controlTree.Index];
-            string cng = comboBoxPlugins.Text;
-
-            Product obj = new Product
-            {
-                Id = product.Id,
-                Name = product.Name,
-                KindOFProduct = product.KindOFProduct,
-                Category = product.Category,
-                Count = product.Count
-            };
-            if (textBoxAdd.Text != null)
-            {
-                manager.AddsDict[cng](obj, Convert.ToInt32(textBoxAdd.Text));
-                try
-                {
-                    logic.CreateOrUpdate(new ProductBindingModel
-                    {
-                        Id = obj.Id,
-                        Name = obj.Name,
-                        Category = obj.Category,
-                        Count = obj.Count,
-                        KindOFProduct = obj.KindOFProduct,
-                        Price = obj.Price
-                    });
-                    MessageBox.Show("Склад пополнен", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DialogResult = DialogResult.OK;
-                    LoadData();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void buttonCreateWaybill_Click(object sender, EventArgs e)
-        {
-            if (manager == null)
-            {
-                return;
-            }
-            if (string.IsNullOrEmpty(controlTree.SelectedNode))
-            {
-                MessageBox.Show("Выберите продукт", "Ошибка");
-                return;
-            }
-            var product = logic.Read(null)[controlTree.Index];
-            string cng = comboBoxPlugins.Text;
-
-            Product obj = new Product
-            {
-                Id = product.Id,
-                Name = product.Name,
-                KindOFProduct = product.KindOFProduct,
-                Category = product.Category,
-                Count = product.Count
-            };
-            manager.WaybillsDict[cng](obj);
         }
     }
 }
