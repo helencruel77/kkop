@@ -60,8 +60,8 @@ namespace PluginWaybill
                 Document = document
             };
             renderer.RenderDocument();
-            renderer.PdfDocument.Save(new FileStream(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "Pdf.pdf"), FileMode.OpenOrCreate));
-            Process.Start(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "Pdf.pdf"));
+            renderer.PdfDocument.Save(new FileStream(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "Pdf"), FileMode.OpenOrCreate));
+            Process.Start(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "Pdf"));
         }
 
         private static void DefineStyles(Document document)
